@@ -29,4 +29,11 @@ class ProvinceTest < Minitest::Test
     assert_equal(-25, asia.shortfall)
     assert_equal(0, asia.profit)
   end
+  
+  def test_empty_string_demand
+    asia = Province.new(sample_province_data)
+    asia.demand = ""
+    assert_nil(nil, asia.shortfall)
+    assert_nil(nil, asia.profit)
+  end
 end

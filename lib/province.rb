@@ -24,10 +24,16 @@ class Province
   end
 
   def shortfall
+    if not @demand.is_a? Integer
+      return nil
+    end
     @demand - @total_production
   end
 
   def profit
+    if not @demand.is_a? Integer
+      return nil
+    end
     demand_value - demand_cost
   end
 
